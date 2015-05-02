@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Ejemplos sencillos de tablas en HTML</title>
+    <meta charset="UTF-8">
+    <!-- usamos esto para ilustrar mejor nuestro ejemplo con
+         bordes en las tablas, pero luego veremos con más detalle
+         el uso de estilos CSS -->
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+  <p>La definición más sencilla, con filas y columnas</p>
+  <table>
+    <tr>
+      <td>F1 C1</td>
+      <td>F1 C2</td>
+      <td>F1 C3</td>
+    </tr>
+    <tr>
+      <td>F2 C1</td>
+      <td>F2 C2</td>
+      <td>F2 C3</td>
+    </tr>
+  </table>
+
+  <p>Una tabla con más elementos y control sobre ellos</p>
+  <!-- Esta tabla tiene 6 columnas y 5 filas en total: 3 películas, 1 encabezado y 1 pie -->
+  <table>
+    <caption>Películas más taquilleras por año</caption>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+      <col>
+      <col span="2" style="background-color: lightgrey;"> <!-- para resaltar columnas de cifras -->
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">Año</th>
+        <th scope="col">Título</th>
+        <th scope="col">Género</th>
+        <th scope="col">Presupuesto</th>
+        <th scope="col">Recaudación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">2013-2015</td>
+        <td>2015</td>
+        <td>Furious 7</td>
+        <td>Acción</td>
+        <td>$190,000,000</td>
+        <td>$324,424,352</td>
+      </tr>
+      <tr>
+        <td>2014</td>
+        <td>American Sniper</td>
+        <td>Drama</td>
+        <td>$58,000,000</td>
+        <td>$348,417,536</td>
+      </tr>
+      <tr>
+        <td>2013</td>
+        <td>The Hunger Games: Catching Fire</td>
+        <td>Aventura</td>
+        <td>$130,000,000</td>
+        <td>$424,668,047</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Totales</td>
+        <td>$378,000,000</td>
+        <td>$1,097,509,935</td>
+      </tr>
+    </tfoot>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Ejemplos de formularios en HTML</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Formulario 1</h1>
+    <form id="form1" method="post" action="http://ejemplo.com/procesar">
+      <label for="nombre">Nombre</label>
+      <br> <!-- por ahora, insertaremos saltos de línea, luego daremos formato
+                de manera más eficiente a formularios con CSS -->
+      <input name="nombre" id="nombre" type="text"> <br>
+
+      <label for="apellido">Apellido</label> <br>
+      <input name="apellido" id="apellido" type="text"> <br>
+
+      <label for="comentario">Comentario o Sugerencia</label> <br>
+      <textarea name="comentario" id="comentario" placeholder="Tu comentario..." rows="5" cols="40"></textarea> <br>
+
+      <input name="enviar_form1" type="submit" value="Enviar">
+      <input name="reiniciar_form1" type="reset" value="Reinicializar">
+    </form>
+
+    <!-- Acá presentamos un segundo ejemplo más completo -->
+    <h2>Formulario de Registro</h2>
+    <form id="form2" method="post" action="http://ejemplo.com/procesar">
+      <fieldset>
+        <legend>Datos básicos</legend>
+
+        <label for="usuario">Usuario</label> <br>
+        <input name="usuario" id="usuario" type="text"> <br>
+
+        <label for="correo">Correo electrónico</label> <br>
+        <input name="correo" id="correo" type="text"> <br>
+
+        <label for="password">Contraseña</label> <br>
+        <input name="password" id="password" type="password"> <br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos personales</legend>
+        <label>Género</label> <br>
+        <input name="genero" id="genero_m" type="radio" value="M">
+        <label for="genero_m">Masculino</label> <br>
+        <input name="genero" id="genero_f" type="radio" value="F">
+        <label for="genero_f">Femenino</label> <br>
+        <br>
+
+        <label>Nivel de Educación</label> <br>
+        <input name="educacion" id="educacion_1" type="checkbox" value="1">
+        <label for="educacion_1">Primaria</label> <br>
+        <input name="educacion" id="educacion_2" type="checkbox" value="2">
+        <label for="educacion_2">Secundaria</label> <br>
+        <input name="educacion" id="educacion_3" type="checkbox" value="3">
+        <label for="educacion_3">Técnica</label> <br>
+        <input name="educacion" id="educacion_4" type="checkbox" value="4">
+        <label for="educacion_4">Grado Universitario</label> <br>
+        <input name="educacion" id="educacion_5" type="checkbox" value="5">
+        <label for="educacion_5">Posgrado, Master, Doctorado</label> <br>
+        <br>
+
+        <label for="area">Área de Interés</label> <br>
+        <select name="area" id="area">
+          <option>--Seleccione--</option>
+          <optgroup label="Humanidades">
+            <option value="1">Derecho</option>
+            <option value="2">Filosofía</option>
+          </optgroup>
+          <optgroup label="Ciencias Básicas">
+            <option value="1">Matemática</option>
+            <option value="2">Física</option>
+            <option value="3">Biología</option>
+          </optgroup>
+        </select>
+        <br><br>
+
+        <label for="foto">Cargar Foto</label> <br>
+        <input type="file" id="foto" name="foto" accept="image/*">
+      </fieldset>
+      <input name="enviar_form2" type="submit" value="Enviar Registro">
+      <input name="reiniciar_form2" type="reset" value="Reinicializar formulario de registro">
+    </form>
+  </body>
+</html>

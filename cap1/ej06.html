@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Ejemplos de formularios en HTML5</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <form id="form1" oninput="porcentaje_seleccionado.value=porcentaje.value">
+      <!-- lista de sugerencias con datalist -->
+      <label for="color1">Escriba o seleccione un nombre de color:</label>
+      <input type="text" name="color1" id="color1" list="colores">
+      <datalist id="colores">
+        <option value="Amarillo">Amarillo</option>
+        <option value="Azul">Azul</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Negro">Negro</option>
+        <option value="Blanco">Blanco</option>
+      </datalist>
+      <br>
+
+      <!-- selección nativa de color -->
+      <label for="color2">Seleccione un color:</label>
+      <input name="color2" id="color2" type="color">
+      <br>
+
+      <!-- el tipo "number" acepta sólo enteros, y el atributo "required"
+           hace que el campo sea obligatorio -->
+      <label for="edad">Escriba su edad:</label>
+      <input type="number" id="edad" name="edad" required>
+      <br>
+
+      <label for="porcentaje">Porcentaje (1-100):</label>
+      <input type="range" id="porcentaje" name="porcentaje" min="0" max="100" step="5" value="30">
+      <br>
+
+      <!-- el tipo "output" se usa para mostrar el resultado de un cálculo (ver "oninput" del formulario) -->
+      <label for="porcentaje_seleccionado">Porcentaje Seleccionado:</label>
+      <output name="porcentaje_seleccionado" id="porcentaje_seleccionado" for="porcentaje"></output>
+      <br>
+
+      <!-- el tipo "email" valida un patrón de correo, con @ -->
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" name="correo" id="correo">
+      <br>
+
+      <!-- El tipo "tel" hace que el método de entrada predeterminado sea más útil en dispositivos móviles.
+           También podemos combinarlo con "pattern" si queremos forzar la validación de un patrón o expresión
+           regular (7 dígitos exactamente, en este caso, pero pueden ser expresiones más complejas) -->
+      <label for="telefono">Número Telefónico (7 dígitos):</label>
+      <input type="tel" name="telefono" id="telefono" pattern="[0-9]{7}">
+      <br>
+
+      <!-- el tipo "search" es similar a una caja de texto, pero según el dispositivo, facilita la entrada de búsqueda -->
+      <label for="busqueda">Búsqueda:</label>
+      <input type="search" name="busqueda" id="busqueda" placeholder="texto a buscar...">
+      <br>
+
+      <!-- el tipo "url" funciona de manera similar a "tel", optimizando la entrada en móviles -->
+      <label for="paginaweb">Página Web:</label>
+      <input type="url" id="paginaweb" name="paginaweb">
+      <br>
+
+      <!-- el tipo "date" proporciona un calendario nativo si el navegador lo implementa (ej Chrome) -->
+      <label for="fecha">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha" name="fecha" max="2014-12-31">
+      <br>
+
+      <!-- el tipo "datetime" no parece implementado aún en Chrome o Firefox -->
+      <label for="fechahora">Fecha y Hora de Reunión:</label>
+      <input type="datetime" id="fechahora" name="fechahora" min="2015-01-01 00:00:00+00:00">
+      <br>
+
+      <!-- el tipo "month" funciona similar a "date", sin especificar el día -->
+      <label for="mes">Introduzca un mes:</label>
+      <input type="month" name="mes" id="mes">
+      <br>
+
+      <!-- el tipo "time" no parece implementado aún en Firefox -->
+      <label for="hora">Hora de Alarma:</label>
+      <input type="time" name="hora" id="hora">
+      <br>
+
+      <!-- el tipo "week" funciona similar a "date" -->
+      <label for="semana">Introduzca una semana:</label>
+      <input type="week" name="semana" id="semana">
+      <br>
+
+      <!-- el atributo "multiple" permite la selección de varios archivos en campos
+           tipo "file", o varios valores de "email", etc -->
+      <label for="archivos">Seleccione uno o más archivos:</label>
+      <input type="file" name="archivos" id="archivos" multiple="multiple">
+      <br>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </body>
+</html>

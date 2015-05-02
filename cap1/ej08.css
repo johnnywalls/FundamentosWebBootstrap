@@ -1,0 +1,133 @@
+/* Familia de tipografías utilizadas en toda la página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* encabezado */
+header {
+  font-weight: bold;
+  color: #DDD;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #aabbaa;
+}
+/* sección de enlaces de navegación */
+nav {
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 5%;
+  float: left; /* apilar sección a la izquierda */
+  width: 10%;
+}
+nav ul {
+  list-style: none; /* no mostrar lista con viñetas */
+  font-size: 1.2em; /* otra medida de tamaño: px, em, pt, % */
+}
+nav ul li {
+  display: block;
+}
+nav ul li a {
+  display: block;
+  float: left;
+  padding: 3px 6px; /* espacio desde el límite interno hasta el contenido */
+  color: #575c7d;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  background: #deff90;
+  color: #485e0f;
+  padding: 3px 6px; /* padding: distancia interna entre el límite y el contenido */
+  margin: 0; /* margin: distancia externa desde el límite del elemento */
+  text-decoration: none;
+  /* estas propiedades permiten bordes redondeados de manera sencilla en los navegadores que lo soportan */
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+article {
+  float: left; /* apilar a la izquierda, en este caso, luego de "nav" */
+  width: 70%;
+  margin-bottom: 10px;
+}
+aside {
+  float: right; /* apilar a la derecha */
+  width: 10%;
+  margin-left: 5%;
+}
+/* pie de página */
+footer {
+  clear: both; /* elimina el efecto de "float" dejado por las secciones anteriores */
+  background-color: lightgrey;
+  color: #9a9a9a;
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+  height: 30px;
+}
+
+/*
+ * Acá colocamos bordes en la tabla con una clase específica, y a
+ * sus filas, colummas y celdas
+ */
+.tabla_con_borde, .tabla_con_borde th, .tabla_con_borde tr, .tabla_con_borde td {
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+}
+/* estilo para el título de la tabla */
+.tabla_con_borde caption {
+  font-weight: bold;
+}
+
+/* definir color de fondo para encabezado y pie de tabla */
+.tabla_con_borde thead, .tabla_con_borde tfoot {
+  background-color: #ccc;
+}
+/* resaltar una fila al pasar con el ratón */
+.tabla_con_borde tbody tr:hover {
+  background-color: lightblue!important; /* "important" para que esto tenga prioridad sobre otras reglas */
+}
+/* cambiar el color de fondo para filas impares en cuerpo de tabla */
+.tabla_con_borde tbody tr:nth-child(odd) {
+   background-color: #eee;
+}
+/* para alinear a la derecha las cifras en celdas de tabla */
+.celda_cifra {
+  text-align: right;
+}
+
+/** Algo de estilo para el formulario  **/
+
+/* espacio en el fieldset */
+fieldset {
+  padding: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/*
+ * Le damos algo de espacio y bordes a la leyenda del fieldset,
+ * además de colocarla en negrilla
+ */
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid;
+  font-weight: bold;
+}
+/*
+ * Hacemos que las etiquetas de los campos estén en negrilla, con algo
+ * de espacio y en su propia línea
+ */
+label {
+  display: block;
+  margin-top: 0.5em;
+  font-weight:bold;
+}
+/*
+ * Las etiquetas que están justo después de los checkbox y radio
+ * no son etiquetas de campos, sino de las opciones, así que
+ * las colocamos en formato normal
+ */
+input[type="checkbox"] + label, input[type="radio"] + label {
+  display: inline;
+  font-weight: normal;
+}
