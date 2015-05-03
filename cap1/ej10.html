@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejemplos sencillos con Javascript</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="ej08.css">
+<script src="ej10.js"></script>
+</head>
+<body onload="mostrar_nombres()">
+  <h1>Invitados a la reunión:</h1>
+  <div id="invitados" style="background-color:#ddd; margin-bottom:20px;"></div>
+  <a href="#" onclick="mostrar_formulario()">Agregar Invitado</a>
+  <div id="nuevo_invitado" style="display: none;">
+    <form id="frm_nuevo_invitado">
+      <fieldset>
+        <legend>Datos del Nuevo Invitado</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido">
+        <label for="telefono">Teléfono (7 dígitos):</label>
+        <input type="tel" name="telefono" id="telefono">
+      </fieldset>
+      <input type="button" value="Agregar"
+             onclick="agregar_invitado( document.getElementById('nombre').value, document.getElementById('apellido').value, document.getElementById('telefono').value )">
+      <input type="reset" value="Cancelar" onclick="ocultar_formulario()">
+    </form>
+  </div>
+</body>
+</html>
