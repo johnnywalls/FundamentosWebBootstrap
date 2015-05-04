@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Elementos de Tipografía con Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>h1. Encabezado</h1>
+    <h2>h2. Encabezado</h2>
+    <h3>h3. Encabezado</h3>
+    <h4>h4. Encabezado</h4>
+    <h5>h5. Encabezado</h5>
+    <h6>h6. Encabezado</h6>
+
+    <hr>
+    <h1>h1. Encabezado <small>Secondary text</small></h1>
+    <h2>h2. Encabezado <small>Secondary text</small></h2>
+    <h3>h3. Encabezado <small>Secondary text</small></h3>
+
+    <hr>
+    <p>En un párrafo normal, podemos <span class="h1">imitar el estilo de un encabezado</span>,
+    manteniendo el texto en línea.</p>
+
+    <hr>
+    <p class="lead">Destacar un párrafo: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+       Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, 
+       ultricies nec, pellentesque eu, pretium quis, sem.</p>
+    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+       In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
+       Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
+       Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
+       viverra quis, feugiat a.</p>
+
+    <hr>
+    <p>
+    Con la etiqueta "mark" <mark>podemos resaltar texto</mark>.
+    También podemos marcar texto como <del>eliminado</del> o <ins>insertado</ins>, útil para mostrar anotaciones
+    o versiones de un documento. El <u>subrayado tradicional</u> se delimita con la etiqueta "u".
+    Para <strong>negrillas</strong>, utilizamos "strong", y para <em>itálica</em>, "em".
+    </p>
+
+    <hr>
+    <p>Podemos utilizar clases CSS incluidas en Bootstrap para <span class="h3">alinear</span> texto:</p>
+    <p class="text-left">A la izquierda, "text-left"</p>
+    <p class="text-center">Centrado, "text-center"</p>
+    <p class="text-right">A la derecha, "text-right"</p>
+    <p class="text-justify">Justificado, "text-justify": Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+    aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Aenean vulputate eleifend tellus. 
+       Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
+       viverra quis, feugiat a. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    </p>
+    <p class="text-nowrap">Evitar rompimiento de línea, "text-nowrap": Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+    aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+    </p>
+
+    <hr>
+    <p>Bootstrap incluye clases CSS para transformar la <strong>capitalización</strong> (mayúsculas/minúsculas):</p>
+    <span class="text-lowercase">Mostrar texto en minúsculas</span>: "text-lowercase".<br>
+    <span class="text-uppercase">Mostrar texto en mayúsculas</span>: "text-uppercase".<br>
+    <span class="text-capitalize">Mostrar texto con inicial en mayúsculas</span>: "text-capitalize".<br>
+
+    <hr>
+    <p>Podemos usar "address" para indicar <span class="h3">información de contacto</span> sobre un objeto o el documento completo:</p>
+    <address>
+      <strong>Homer J. Simpson</strong><br>
+      742 Evergreen Terrace<br>
+      Springfield<br>
+      <abbr title="Teléfono">T:</abbr> (123) 456-7890<br>
+      <abbr title="Móvil">M:</abbr> (123) 456-7890<br>
+    </address>
+
+    <hr>
+    <p>Para delimitar <span class="h3">texto citado</span>, podemos utilizar "blockquote" alrededor de cualquier contenido HTML.
+       Usualmente es un párrafo delimitado con la etiqueta "p":
+    </p>
+    <blockquote>
+      <p>En algún lugar de la mancha, de cuyo nombre no quiero acordarme...</p>
+    </blockquote>
+    <p>También podemos hacer referencia a la fuente o autor de una cita con un "footer" dentro de la misma:</p>
+    <blockquote>
+      <p>En algún lugar de la mancha, de cuyo nombre no quiero acordarme...</p>
+      <footer>Miguel de Cervantes en <cite>El Quijote</cite>.</footer>
+    </blockquote>
+    <p>Y por último, utilizar la clase "blockquote-reverse" para alinear la cita a la derecha:</p>
+    <blockquote class="blockquote-reverse">
+      <p>En algún lugar de la mancha, de cuyo nombre no quiero acordarme...</p>
+      <footer>Miguel de Cervantes en <cite>El Quijote</cite>.</footer>
+    </blockquote>
+
+    <hr>
+    <p>Para <span class="h3">listas</span>, podemos utilizar las tradicionales "ol" (lista sin orden) y "ul" (lista ordenada):</p>
+    <ul>
+      <li>Lisa</li>
+      <li>Bart</li>
+      <li>Maggie</li>
+    </ul>
+    <ol>
+      <li>Springfield</li>
+      <li>Shelbyville</li>
+    </ol>
+    <p>En caso de necesitar una lista sin viñetas o numeración, podemos usar la clase CSS "list-unstyled":</p>
+    <ul class="list-unstyled">
+      <li>Lisa</li>
+      <li>Bart</li>
+      <li>Maggie</li>
+    </ul>
+    <p>O incluso colocar los elementos de la lista en línea con la clase "list-inline":</p>
+    <ul class="list-inline">
+      <li>Lisa</li>
+      <li>Bart</li>
+      <li>Maggie</li>
+    </ul>
+    <p>Podemos utilizar las <span class="h3">listas de descripción</span> "dl", con "dt" (término) y "dd" (significado/definición):</p>
+    <dl>
+      <dt>Euismod</dt>
+      <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+      <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+      <dt>Malesuada porta</dt>
+      <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+    <p>Y también colocarlas en modo horizontal, con la clase "dl-horizontal":</p>
+    <dl class="dl-horizontal">
+      <dt>Euismod</dt>
+      <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+      <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+      <dt>Malesuada porta</dt>
+      <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+    </dl>
+
+    <hr>
+    <p>Para mostrar <span class="h3">fragmentos de código</span>, podemos utilizar:</p>
+    <ul>
+      <li>La etiqueta "code" para delimitar código "en línea": <code>&lt;section&gt;</code> (podemos continuar con texto).</li>
+      <li>La etiqueta "pre" (y opcionalmente, seguida de "code") para bloques completos de texto:
+      <pre><code>
+aptitude update
+aptitude upgrade
+      </code></pre>
+      </li>
+      <li>Si queremos representar algo que el usuario debe introducir en el teclado (como una
+          combinación de teclas, por ejemplo), utilizamos "kbd": <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Supr</kbd>
+      </li>
+      <li>Manteniendo el principio semántico de HTML5, si queremos expresar <em>variables</em> (por ejemplo,
+          como parte de una fórmula, utilizamos "var":
+          <var>c</var><sup>2</sup> = <var>a</var><sup>2</sup> + <var>b</var><sup>2</sup>
+      </li>
+      <li>Y para delimitar <em>ejemplos de salida</em> de comandos o programas, utilizamos "samp":
+          <samp>Estado actual: 2 actualizaciones [+2].</samp>
+      </li>
+    </ul>
+    <p>En caso de querer mostrar código que pueda incluir caracteres especiales para HTML, como
+    etiquetas, signos de "mayor que" o "menor que", se recomienda utilizar la 
+    <a href="http://www.w3.org/International/questions/qa-escapes#use">sintaxis de códigos
+    o nombres de entidades</a>.
+    </p>
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
