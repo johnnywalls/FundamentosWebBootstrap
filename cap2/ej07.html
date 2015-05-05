@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+<title>Imágenes e Iconos con Bootstrap</title>
+
+<!-- CSS Bootstrap -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+<!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+
+<!-- Estilos de íconos de Font Awesome -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Imágenes</h1>
+    <h3>Imagen regular</h3>
+    <img src="http://placehold.it/480x300" alt="Comodín de imagen" title="Imagen Regular">
+    <h3>Imagen con clase "responsive"</h3>
+    <img src="http://placehold.it/480x300" alt="Comodín de imagen" class="img-responsive" title="Imagen sensible al dispositivo">
+    <h3>Distintas formas de contenedor de imagen</h3>
+    <img src="http://placehold.it/200x200" alt="Comodín de imagen" class="img-rounded" title="Imagen con bordes redondeados">
+    <img src="http://placehold.it/200x200" alt="Comodín de imagen" class="img-circle" title="Imagen en marco circular">
+    <img src="http://placehold.it/200x200" alt="Comodín de imagen" class="img-thumbnail" title="Contenedor de miniatura de imagen">
+
+    <hr>
+    <h1>Íconos (Glyphicons "Halflings"), incluidos en Bootstrap</h1>
+    <h3>Íconos en botones</h3>
+    <!-- En general, los íconos se colocan con una etiqueta "span" vacía (sin contenido), utilizando la clase "glyphicon"
+         y luego la clase correspondiente al ícono específico deseado. -->
+    <!-- Si vamos a usar íconos en botones, por ejemplo, sin texto (como en una barra de herramientas), deberíamos asegurarnos
+         de incluir texto accesible en el botón para usuarios con lectores de pantalla (usando "aria-label"), y podemos ocultar
+         el ícono propiamente dicho para el lector de pantalla, ya que se basa en caracteres Unicode que podrían ser interpretados
+         equivocadamente como contenido por dichas tecnologías de accesibilidad. -->
+    <div class="bs-example">
+      <h4>Barra/grupo de botones (sin texto):</h4>
+      <div class="btn-group"> <!-- para definir un grupo contiguo de botones -->
+        <button type="button" class="btn btn-default" aria-label="Alinear a la izquierda">
+          <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Centrar">
+          <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Alinear a la derecha">
+          <span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Alinear con justificado">
+          <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h4>Botones con texto e ícono:</h4>
+      <button type="button" class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar
+      </button>
+      <button type="button" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Cancelar
+      </button>
+      <button type="button" class="btn btn-danger btn-lg">
+        <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> Eliminar
+      </button>
+    </div>
+
+    <div class="bs-example">
+      <h4>Íconos dentro de texto:</h4>
+      <p>Esto podría ser un detalle importante: <span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Lorem ipsum dolor...</p>
+    </div>
+
+    <div class="bs-example">
+      <h4>Íconos en campos de formulario:</h4>
+      <!-- Al usar íconos para mostrar estados de validación, debemos asegurarnos de incluir, como anteriormente,
+          texto de ayuda para lectores de pantalla, para usuarios con necesidades de accesibilidad. Además de
+          usar las clases "has-success", "has-warning", etc, para indicar el estado de validación, agregamos
+          la clase "has-feedback" al form-group, y en el ícono deseado, agregamos la clase "form-control-feedback" -->
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="entrada-exitosa">Campo con validación exitosa</label>
+        <input type="text" class="form-control" id="entrada-exitosa" aria-describedby="estado-exito">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="estado-exito" class="sr-only">(validación exitosa)</span>
+      </div>
+      <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="entrada-advertencia">Campo con advertencia</label>
+        <input type="text" class="form-control" id="entrada-advertencia" aria-describedby="estado-advertencia">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="estado-advertencia" class="sr-only">(advertencia: el valor está fuera del rango común)</span>
+      </div>
+      <div class="form-group has-error has-feedback">
+        <label class="control-label" for="entrada-error">Campo con error</label>
+        <input type="text" class="form-control" id="entrada-error" aria-describedby="estado-error">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span id="estado-error" class="sr-only">(error: valor inválido)</span>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h4>Íconos en etiquetas de formulario:</h4>
+      <form>
+        <div class="form-group">
+          <label for="email">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Correo Electrónico
+          </label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="password">
+            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Contraseña
+          </label>
+          <input type="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar Sesión
+        </button>
+      </form>
+    </div>
+
+    <div class="bs-example">
+      <h4>Íconos como etiquetas de formulario:</h4>
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="email2">Correo Electrónico</label>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            </div>
+            <input type="email" class="form-control" id="email2" placeholder="Correo Electrónico">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="password2">Contraseña</label>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+            </div>
+            <input type="password" class="form-control" id="password2" placeholder="Contraseña">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar Sesión
+        </button>
+      </form>
+    </div>
+
+    <hr>
+    <h1>Usar íconos de Font-Awesome</h1>
+    <!-- Podemos usar Font Awesome de manera muy similar a los Glyphicons incluidos en Bootstrap:
+          usando etiquetas <i> en lugar de etiquetas <span>, y las mismas consideraciones de accesibilidad.
+          Además de mayor variedad, Font Awesome permite mayor control sobre tamaños, e incluso la 
+          posibilidad de combinar íconos -->
+    <div class="bs-example">
+      <h3>En formularios</h3>
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="email3">Correo Electrónico</label>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="fa fa-envelope-o"></i>
+            </div>
+            <input type="email" class="form-control" id="email3" placeholder="Correo Electrónico">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="password2">Contraseña</label>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="fa fa-key"></i>
+            </div>
+            <input type="password" class="form-control" id="password3" placeholder="Contraseña">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-sign-in"></i> Iniciar Sesión
+        </button>
+      </form>
+    </div>
+    <div class="bs-example">
+      <h3>Ajustar tamaño agregando clase CSS:</h3>
+      <i class="fa fa-camera-retro fa-lg"></i> fa-lg
+      <i class="fa fa-camera-retro fa-2x"></i> fa-2x
+      <i class="fa fa-camera-retro fa-3x"></i> fa-3x
+      <i class="fa fa-camera-retro fa-4x"></i> fa-4x
+      <i class="fa fa-camera-retro fa-5x"></i> fa-5x
+    </div>
+    <div class="bs-example">
+      <h3>Animar íconos (fa-spin, fa-pulse):</h3>
+      <i class="fa fa-refresh fa-spin fa-lg"></i>
+      <i class="fa fa-spinner fa-spin fa-lg"></i>
+      <i class="fa fa-spinner fa-pulse fa-lg"></i>
+    </div>
+    <div class="bs-example">
+      <h3>Rotar íconos (fa-rotate-*, fa-flip-horizontal, fa-flip-vertical):</h3>
+      <i class="fa fa-shield"></i> normal<br>
+      <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90<br>
+      <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180<br>
+      <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270<br>
+      <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal<br>
+      <i class="fa fa-shield fa-flip-vertical"></i> icon-flip-vertical
+    </div>
+    <div class="bs-example">
+      <h3>Combinar (apilar) íconos:</h3>
+      <!-- Para combinar dos íconos, colocamos un "span" como contenedor con la clase "fa-stack",
+           y dentro los dos íconoes deseados (en este caso, el interno con tamaño 1x y el externo
+           con tamaño 2x -->
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-camera fa-stack-1x"></i>
+        <i class="fa fa-ban fa-stack-2x text-danger"></i>
+      </span>
+      "fa-ban" sobre "fa-camera"
+    </div>
+  </div>
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
