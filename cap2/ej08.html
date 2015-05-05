@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+<title>Clases Utilitarias de Bootstrap</title>
+
+<!-- CSS Bootstrap -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+<!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <div class="bs-example">
+      <h1>Colores contextuales de texto</h1>
+      <p>(texto normal) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-muted">(text-muted) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-primary">(text-primary) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-success">(text-success) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-info">(text-info) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-warning">(text-warning) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="text-danger">(text-danger) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+    </div>
+
+    <div class="bs-example">
+      <h1>Colores contextuales de fondo</h1>
+      <p>(texto normal) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="bg-primary">(bg-primary) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="bg-success">(bg-success) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="bg-info">(bg-info) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="bg-warning">(bg-warning) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+      <p class="bg-danger">(bg-danger) Maecenas nec sollicitudin metus, at eleifend tellus. Aliquam lacinia mi sit amet ante porttitor viverra.</p>
+    </div>
+
+    <div class="bs-example">
+      <h1>Indicadores para cerrar (close) y desplegar (caret)</h1>
+      <!-- Al ser un botón sólo compuesto de un icono, colocamos el texto accesible con "aria-label".
+           La entidad HTML &times; (signo de multiplicación) se utiliza para comúnmente con este propósito,
+           y al agregar la clase "close" al botón, éste se posiciona automáticamente a la derecha -->
+      <p>Lorem ipsum dolor...
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </p>
+      Indicador para desplegar (caret)<span class="caret"></span>
+    </div>
+
+    <div class="bs-example">
+      <h1>Mostrar y ocultar contenido:</h1>
+      <button type="button" class="btn btn-link btn-lg" id="btn-toggle">Mostrar contenido oculto</button>
+      <div class="show">
+        Contenido visible en cualquier dispositivo
+      </div>
+      <div class="hidden" id="invisible">
+        Contenido oculto
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h1>Mostrar y ocultar contenido según el dispositivo (responsive)</h1>
+      <p>Podemos especificar la visibilidad del contenido que deseemos según el dispositivo
+         en el que se esté visualizando (de manera similar a la cuadrícula adaptable), utilizando
+         las clases: <code>.visible-[tamaño]-[visualización]</code> o <code>.hidden-[tamaño]</code>
+         donde <strong>[tamaño]</strong>
+         puede ser: <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code> y 
+         <strong>[visualización]</strong> puede ser <code>block</code>, <code>inline</code> o
+         <code>inline-block</code> (equivalente al atributo CSS <code>display</code>).
+      </p>
+      <h3>Tamaño actual:</h3>
+      <button class="btn btn-default visible-xs-block hidden-sm hidden-md hidden-lg">XS</button>
+      <button class="btn btn-default visible-sm-block hidden-xs hidden-md hidden-lg">SM</button>
+      <button class="btn btn-default visible-md-block hidden-xs hidden-sm hidden-lg">MD</button>
+      <button class="btn btn-default visible-lg-block hidden-xs hidden-sm hidden-md">LG</button>
+      <!-- Estas clases son útiles, por ejemplo, si no tiene sentido mostrar cierto contenido,
+           como imágenes de alta resolución, en dispositivos de pantallas pequeñas, o viceversa,
+           por ejemplo cuando cierto contenido sólo tiene sentido en dispositivos móviles -->
+    </div>
+    <div class="bs-example">
+      <h1>Mostrar y ocultar contenido para impresión</h1>
+      <p>Al igual que las clases "responsive", podemos usar <code>.visible-print-block</code>, 
+      <code>.visible-print-inline</code>, <code>.visible-print-inline-block</code> y 
+      <code>.hidden-print</code> para especificar qué contenido mostrar u ocultar al imprimir:</p>
+      <div class="row well">
+        <span class="col-xs-6 hidden-print">Visible sólo en navegador</span>
+        <span class="col-xs-6 visible-print-block">Visible sólo en impresión</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    $('#btn-toggle').click(function(){
+      /* Quitamos o colocamos la clase "hidden". En este caso, no serviría sólo
+       * el método "toggle()" como probamos anteriormente, ya que las clases "hidden" y "show"
+       * definidas en Bootstrap tienen prioridad sobre la propiedad "display", al estar definidas
+       * con !important:
+       * .show {
+       *   display: block !important;
+       * }
+       * .hidden {
+       *   display: none !important;
+       *   visibility: hidden !important;
+       * }
+       */
+      $('#invisible').toggleClass('hidden');
+
+      // cambiamos el texto del botón
+      if ( $('#invisible').hasClass('hidden') ) {
+        $('#btn-toggle').text('Mostrar contenido oculto');
+      }
+      else {
+        $('#btn-toggle').text('Ocultar nuevamente');
+      }
+    });
+  </script>
+
+</body>
+</html>
