@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Barras de navegación con Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Agregamos esto para evitar que el contenido de la página se solape con el
+menú fijo inferior.  Si colocásemos un menú fijo superior, utilizaríamos
+"padding-top" en lugar de "padding-bottom" */
+body { padding-bottom: 70px; }
+
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Barras de navegación con Bootstrap</h1>
+
+    <div class="bs-example">
+      <h2>Ejemplo con diversos elementos</h2>
+
+      <!-- Agregamos la clase "navbar" y "navbar-default" para el estilo predeterminado -->
+      <nav class="navbar navbar-default">
+        <!-- Comúnmente usaremos container-fluid para ocupar todo el ancho disponible en el
+             contenedor, pero también podemos usar sólo "container" -->
+        <div class="container-fluid">
+          <!-- Para que la barra de navegación sea sensible (responsive), debemos agregar
+               un botón que permita acceder a las opciones en caso de que la cantidad de
+               elementos y el ancho del dispositivo (ej. móviles) se "contraiga" (collapse) -->
+          <!-- Es importante recordar incluir etiquetas y elementos de texto accesible para
+               los usuarios que utilicen tecnologías de accesibilidad (atributos aria-* o
+               etiquetas "sr-only", etc.) -->
+          <!-- Agrupamos el botón para la barra "contraída" (collapsed) y la imagen de marca -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-1">
+              <span class="sr-only">Activar navegación</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <!-- Acá usamos un ícono, pero podemos colocar una imagen, etc -->
+              <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
+              <span>Marca</span>
+            </a>
+          </div>
+
+          <!-- Agrupamos los enlaces de navegación, botones, formularios y otros elementos de la barra -->
+          <div class="collapse navbar-collapse" id="barra-1">
+            <!-- En un primer grupo, tendremos algunos enlaces y un menú -->
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Enlace <span class="sr-only">(actual)</span></a></li>
+              <li><a href="#">Enlace</a></li>
+              <!-- Podemos agregar un menú desplegable, colocando la clase "dropdown" a un elemento
+                   de la lista de nuestra barra principal, y agregando el menú normalmente -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Menú <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Acción</a></li>
+                  <li><a href="#">Acción 2</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Enlace</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Para incluir un mini-formulario, agregamos la clase "navbar-form" y la correspondiente
+                 alineación (aquí, a la izquierda). Para mejor accesibilidad, agregamos el rol llevado a 
+                 cabo por el formulario (en este caso, de búsqueda).  Para ilustrar, haremos que este
+                 formulario sólo sea visible en resoluciones "media" y "grande" -->
+            <form class="navbar-form navbar-left visible-md-inline visible-lg-inline" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Texto a buscar...">
+              </div>
+              <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <!-- Agregamos otro menú desplegable, esta vez alineado a la derecha -->
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Mi Cuenta <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Editar perfil</a></li>
+                  <li><a href="#">Preferencias</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Salir</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Podemos seguir agregando elementos, en este caso, texto (no navegable).
+                 Apilamos a la derecha -->
+            <p class="navbar-text navbar-right">Sesión iniciada como Homer J.</p>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div> <!--bs-example -->
+
+    <p>En la parte inferior, incluimos una barra de navegación fija con "navbar-fixed-bottom". Es
+       necesario compensar con "padding-bottom" la altura de la barra (predeterminada de 50px) para que
+       el contenido no se solape con la barra. Aquí utilizamos:</p>
+    <code>body { padding-bottom: 70px; }</code>
+    <p>En caso de querer una barra fija superior, usaríamos "navbar-fixed-top" y "padding-top".</p>
+
+    <div style="height: 800px; background-color: lightblue;">
+    Más contenido para ilustrar el menú fijo inferior y el "padding"
+    </div>
+
+    <p>Texto de prueba</p>
+
+    <!-- Agregamos barra de navegación fija inferior (se mantiene en su posición incluso al
+         desplazar) -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-2">
+            <span class="sr-only">Activar navegación inferior</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Marca</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="barra-2">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+          <p class="navbar-text navbar-right">&copy; 2015 - Mi marca</p>
+        </div>
+      </div>
+    </nav>
+    
+    
+    
+    
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
