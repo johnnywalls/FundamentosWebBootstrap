@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Grupos de Botones con Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Ejemplos de Grupos de Botones con Bootstrap</h1>
+
+    <div class="bs-example">
+      <h2>Ejemplo básico: "btn-group"</h2>
+      <!-- Usamos la clase "btn-group", y agregamos texto accesible al grupo y botones -->
+      <div class="btn-group" role="group" aria-label="Opciones de alineación">
+        <button type="button" class="btn btn-default" aria-label="Alinear a la izquierda">
+          <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Centrar">
+          <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Alinear a la derecha">
+          <span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Alinear con justificado">
+          <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Estilo de Barra de Herramientas: "btn-toolbar"</h2>
+      <!-- Para una barra de herramientas (que contiene varios grupos de botones), colocamos
+           los "btn-group" dentro de un contenedor con clase "btn-toolbar" -->
+      <div class="btn-toolbar" role="toolbar" aria-label="Herramientas">
+        <div class="btn-group" role="group" aria-label="Alineación">
+          <button type="button" class="btn btn-default" aria-label="Alinear a la izquierda">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Centrar">
+            <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Alinear a la derecha">
+            <span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Alinear con justificado">
+            <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Reproducción">
+          <button type="button" class="btn btn-default" aria-label="Retroceder">
+            <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+          </button>
+          <!-- Si queremos forzar a mostrar un botón como "pulsado", agregamos la 
+               seudo-clase "active" -->
+          <button type="button" class="btn btn-default active" aria-label="Reproducir">
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Pausar">
+            <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Adelantar">
+            <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Ajustar Tamaño: "btn-group-lg", "btn-group-sm", "btn-group-xs"</h2>
+      Grande:
+      <div class="btn-group btn-group-lg" role="group" aria-label="Botones grandes">
+        <button type="button" class="btn btn-default">Izquierda</button>
+        <button type="button" class="btn btn-default">Centro</button>
+        <button type="button" class="btn btn-default">Derecha</button>
+      </div>
+      <br>
+      Normal:
+      <div class="btn-group" role="group" aria-label="Botones normales">
+        <button type="button" class="btn btn-default">Izquierda</button>
+        <button type="button" class="btn btn-default">Centro</button>
+        <button type="button" class="btn btn-default">Derecha</button>
+      </div>
+      <br>
+      Pequeño:
+      <div class="btn-group btn-group-sm" role="group" aria-label="Botones pequeños">
+        <button type="button" class="btn btn-default">Izquierda</button>
+        <button type="button" class="btn btn-default">Centro</button>
+        <button type="button" class="btn btn-default">Derecha</button>
+      </div>
+      <br>
+      Extra-pequeño:
+      <div class="btn-group btn-group-xs" role="group" aria-label="Botones extra-pequeños">
+        <button type="button" class="btn btn-default">Izquierda</button>
+        <button type="button" class="btn btn-default">Centro</button>
+        <button type="button" class="btn btn-default">Derecha</button>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Anidación: desplegable dentro de grupo de botones</h2>
+      <div class="btn-group" role="group" aria-label="Grupo de botones">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-default">2</button>
+
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            3
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" href="#">Acción A</a></li>
+            <li role="presentation"><a role="menuitem" href="#">Acción B</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Ejemplo vertical: "btn-group-vertical"</h2>
+      <div class="btn-group-vertical" role="group" aria-label="Grupo de botones">
+        <button type="button" class="btn btn-default">Lorem</button>
+        <button type="button" class="btn btn-default">Ipsum</button>
+
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Dolor
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" href="#">Acción A</a></li>
+            <li role="presentation"><a role="menuitem" href="#">Acción B</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Botón con acción principal y menú de acciones (secundarias)</h2>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Mostrar/Ocultar acciones</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li role="presentation"><a role="menuitem" href="#">Guardar como...</a></li>
+          <li role="presentation"><a role="menuitem" href="#">Sobreescribir</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation" class="dropdown-header">
+            <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> Guardar en...
+          </li>
+          <li role="presentation"><a role="menuitem" href="#">FTP</a></li>
+          <li role="presentation"><a role="menuitem" href="#">Dropbox</a></li>
+          <li role="presentation"><a role="menuitem" href="#">Google Drive</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
