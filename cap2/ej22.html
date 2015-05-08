@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Desplegables en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Desplegables en Bootstrap</h1>
+
+    <div class="bs-example">
+      <h2>Ejemplo de desplegable con eventos</h2>
+      <div class="alert alert-info">Activar la consola web para ver mensajes de eventos</div>
+      <nav>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="#">Inicio</a></li>
+          <li role="presentation" class="dropdown" id="menu1">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+               id="boton-productos" aria-expanded="false">
+              Productos <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" id="opciones-menu">
+              <li role="presentation"><a role="menuitem" href="#">Lorem</a></li>
+              <li role="presentation"><a role="menuitem" href="#">Ipsum</a></li>
+              <li role="presentation"><a role="menuitem" href="#">Dolor</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" href="#">Otra acción</a></li>
+            </ul>
+          </li>
+          <li role="presentation"><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <p>Incluimos otro botón que también activa el menú desplegable</p>
+      <button type="button" data-toggle="dropdown" class="btn btn-default" id="boton2">Botón 2</button>
+    </div>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+$('#boton2').click(function(event){
+  console.log( 'Clic en el boton2' );
+  $('#menu1 .dropdown-menu').dropdown('toggle'); // activar el menú
+  // evitar que la acción del botón oculte los menús retornando un valor falso
+  return false; // también serviría event.stopPropagation();
+});
+
+$('#menu1').on('show.bs.dropdown', function (event) {
+  console.log( 'show' );
+  var boton = $(event.relatedTarget);
+  console.log( 'El elemento que activó el menú fue: ' + boton.attr('id') );
+});
+$('#menu1').on('shown.bs.dropdown', function (event) {
+  console.log( 'shown' );
+});
+$('#menu1').on('hide.bs.dropdown', function (event) {
+  console.log( 'hide' );
+});
+$('#menu1').on('hidden.bs.dropdown', function (event) {
+  console.log( 'hidden' );
+});
+
+</script>
+</body>
+</html>
