@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Clases "media" en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Clases "media" en Bootstrap</h1>
+
+    <div class="bs-example">
+      <h2>Objetos "media", anidados y con diferentes alineaciones</h2>
+
+      <!-- Iniciamos con el contenedor con clase "media" -->
+      <div class="media">
+        <!-- Con "media-left", el objeto de imagen, video o audio estará a la izquierda del texto -->
+        <div class="media-left">
+          <a href="#">
+            <!-- Agregamos la clase "media-object a la imagen, audio o video -->
+            <img class="media-object" alt="Imagen" src="http://placehold.it/64x64">
+          </a>
+        </div>
+        <!-- El contenido textual asociado al objeto anterior estará encerrado en un "media-body" -->
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at.
+        </div>
+      </div>
+
+      <!-- Luego, podemos seguir agregando diferentes objetos "media", e incluso anidarlos -->
+      <div class="media">
+        <div class="media-left">
+          <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado 2</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at.
+          <div class="media">
+            <div class="media-left">
+              <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Encabezado anidado</h4>
+              Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              Cras purus odio, vestibulum in vulputate at.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="media">
+        <!-- Acá mostramos un ejemplo del objeto alineado a la derecha del texto -->
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado con objeto a la derecha</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at.
+        </div>
+        <div class="media-right">
+          <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+        </div>
+      </div>
+
+      <!-- El objeto de imagen, audio o video puede alinearse en la parte superior (predeterminado),
+           al medio o en la parte inferior del texto -->
+      <div class="media">
+        <!-- Con "media-top", el objeto estará alineado a la parte superior del texto -->
+        <div class="media-left media-top">
+          <a href="#">
+            <!-- Agregamos la clase "media-object a la imagen, audio o video -->
+            <img class="media-object" alt="Imagen" src="http://placehold.it/64x64">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado con objeto "media-top"</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at. Sed diam ex, rutrum quis libero faucibus, 
+          consequat pretium neque? Sed a consectetur elit, eu euismod tortor. Etiam fringilla, arcu 
+          quis viverra elementum, metus ipsum euismod orci, euismod dictum erat mauris id risus. 
+          Mauris auctor ultricies facilisis. Maecenas mollis sapien ac leo dignissim, quis consectetur
+          nisi egestas! Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+          In et feugiat nunc, aliquam cursus purus. Donec semper velit nec tempus eleifend.
+          Curabitur tempor convallis eros sit amet sodales. Vivamus mattis a orci ut egestas. 
+          Nam quis tincidunt nisl, ut varius sapien. Maecenas tristique diam porttitor, venenatis
+          sem sit amet, sagittis turpis.
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <!-- Agregamos la clase "media-object a la imagen, audio o video -->
+            <img class="media-object" alt="Imagen" src="http://placehold.it/64x64">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado con objeto "media-middle"</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at. Sed diam ex, rutrum quis libero faucibus, 
+          consequat pretium neque? Sed a consectetur elit, eu euismod tortor. Etiam fringilla, arcu 
+          quis viverra elementum, metus ipsum euismod orci, euismod dictum erat mauris id risus. 
+          Mauris auctor ultricies facilisis. Maecenas mollis sapien ac leo dignissim, quis consectetur
+          nisi egestas! Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+          In et feugiat nunc, aliquam cursus purus. Donec semper velit nec tempus eleifend.
+          Curabitur tempor convallis eros sit amet sodales. Vivamus mattis a orci ut egestas. 
+          Nam quis tincidunt nisl, ut varius sapien. Maecenas tristique diam porttitor, venenatis
+          sem sit amet, sagittis turpis.
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left media-bottom">
+          <a href="#">
+            <!-- Agregamos la clase "media-object a la imagen, audio o video -->
+            <img class="media-object" alt="Imagen" src="http://placehold.it/64x64">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Encabezado con objeto "media-bottom"</h4>
+          Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          Cras purus odio, vestibulum in vulputate at. Sed diam ex, rutrum quis libero faucibus, 
+          consequat pretium neque? Sed a consectetur elit, eu euismod tortor. Etiam fringilla, arcu 
+          quis viverra elementum, metus ipsum euismod orci, euismod dictum erat mauris id risus. 
+          Mauris auctor ultricies facilisis. Maecenas mollis sapien ac leo dignissim, quis consectetur
+          nisi egestas! Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+          In et feugiat nunc, aliquam cursus purus. Donec semper velit nec tempus eleifend.
+          Curabitur tempor convallis eros sit amet sodales. Vivamus mattis a orci ut egestas. 
+          Nam quis tincidunt nisl, ut varius sapien. Maecenas tristique diam porttitor, venenatis
+          sem sit amet, sagittis turpis.
+        </div>
+      </div>
+
+    </div><!-- bs-example -->
+
+    <div class="bs-example">
+      <h2>Lista con formato de objetos "media" (útil para hilos de comentarios, etc)</h2>
+      <!-- Agregamos la clase "media-list" al contenedor de lista -->
+      <ul class="media-list">
+        <!-- Agregamos la clase "media" a cada elemento de la lista -->
+        <li class="media">
+          <!-- Dentro, el contenido de cada elemento "media" como antes -->
+          <div class="media-left">
+            <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">Encabezado</h4>
+            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+            <!-- Objeto anidado -->
+            <div class="media">
+              <div class="media-left">
+                <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Encabezado anidado</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                <!-- Podemos seguir anidando varios niveles -->
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Encabezado anidado 2</h4>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante 
+                    sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left">
+                <a href="#"><img class="media-object" alt="Imagen" src="http://placehold.it/64x64"></a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Encabezado anidado</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
