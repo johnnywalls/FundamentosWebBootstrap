@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Paneles y cajas en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Paneles y cajas en Boostrap</h1>
+
+    <div class="bs-example">
+      <h2>Paneles</h2>
+
+      <!-- La clase base, "panel", y luego, el estilo deseado -->
+      <div class="panel panel-default">
+        <!-- Encerramos el contenido principal en un "panel-body" -->
+        <div class="panel-body">
+          Panel básico predeterminado
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <!-- Para encabezado, agregamos un contenedor con clase "panel-heading" -->
+        <div class="panel-heading">Panel con encabezado y pie</div>
+        <div class="panel-body">
+          Contenido del panel
+        </div>
+        <!-- Y para pie, otro con clase "panel-footer" -->
+        <div class="panel-footer">
+          Pie del panel
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <!-- Podemos utilizar la clase "panel-title" para dar estilo de título
+               al encabezado del panel -->
+          <h3 class="panel-title">Estilo de título para encabezado en panel</h3>
+        </div>
+        <div class="panel-body">
+          Contenido del panel
+        </div>
+        <!-- Siempre podemos agregar y personalizar otros elementos dentro de un
+             panel, con estilos compatibles de manera predeterminada. Aquí agregamos
+             un pie para el panel (alineado a la derecha) con un botón predeterminado -->
+        <div class="panel-footer text-right">
+          Pie del panel <button type="button" class="btn btn-default">Botón</button>
+        </div>
+      </div>
+
+      <!-- Podemos usar también las clases contextuales en los paneles -->
+      <div class="panel panel-primary">
+        <div class="panel-heading">Panel principal (panel-primary)</div>
+        <div class="panel-body">
+          Contenido...
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">Panel exitoso (panel-success)</div>
+        <div class="panel-body">
+          Contenido...
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Panel informativo (panel-info)</div>
+        <div class="panel-body">
+          Contenido...
+        </div>
+      </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">Panel de advertencia (panel-warning)</div>
+        <div class="panel-body">
+          Contenido...
+        </div>
+      </div>
+      <div class="panel panel-danger">
+        <div class="panel-heading">Panel de peligro (panel-danger)</div>
+        <div class="panel-body">
+          Contenido...
+        </div>
+      </div>
+
+      <!-- Podemos agregar otros tipos de elementos en un panel, como una tabla -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Encabezado de panel con tabla</div>
+        <div class="panel-body">
+          <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque
+            ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies 
+            vehicula ut id elit.</p>
+        </div>
+
+        <!-- Tabla (sin bordes, o sea .table-bordered) -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Bart</td>
+              <td>Simpson</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Lisa</td>
+              <td>Simpson</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Ned</td>
+              <td>Flanders</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bs-example">
+      <h2>Cajas</h2>
+      <!-- Usamos las cajas o pozos ("well") para un efecto incrustado -->
+      <div class="well">Esta es una caja o pozo predeterminado</div>
+      <!-- Podemos controlar el espaciado con las clases "well-lg" y "well-sm" -->
+      <div class="well well-lg">Esta es una caja o pozo grande (well-lg)</div>
+      <div class="well well-sm">Esta es una caja o pozo pequeño (well-sm)</div>
+    </div>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
