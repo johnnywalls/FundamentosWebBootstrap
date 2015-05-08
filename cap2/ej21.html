@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Diálogos modales en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+/* clase local para visualizar mejor bloques de ejemplo */
+.bs-example {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Diálogos modales en Bootstrap</h1>
+
+    <div class="bs-example">
+      <h2>Diálogo desencadenado por un botón</h2>
+      <!-- El botón que desencadena el diálogo debe tener el attributo data-toggle="modal"
+           y data-target con el ID del diálogo que debe mostrar -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+        Mostrar diálogo
+      </button>
+
+      <!-- Incluimos la clase "modal" ("fade" también para efecto de visualización). Los
+           atributos de role="dialog" y "aria-*" son para mejorar la accesibilidad -->
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" 
+           aria-labelledby="titulo-modal1" aria-hidden="true">
+        <!-- Los contenedores del diálogo y el contenido propiamente dicho -->
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Podemos especificar encabezado, cuerpo y pie para el diálogo -->
+            <div class="modal-header">
+              <!-- Botón clásico para cerrar con ícono en el encabezado. Nótese el uso de
+                   data-dismiss="modal" para indicar que este elemento cierra el diálogo -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <!-- Usamos la clase "modal-title" para agregar estilo de título al encabezado -->
+              <h4 class="modal-title" id="titulo-modal1">Título</h4>
+            </div>
+            <!-- El cuerpo/mensaje del diálogo -->
+            <div class="modal-body">
+              Contenido...
+            </div>
+            <!-- El pie del diálogo comúnmente incluye botones de acción para cerrar,
+                 desencadenar acciones o responder alguna pregunta realizada en el cuerpo
+                 del diálogo -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- bs-example -->
+
+    <div class="bs-example">
+      <h2>Diferentes tamaños de diálogos</h2>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">
+        Mostrar diálogo grande
+      </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal3">
+        Mostrar diálogo pequeño
+      </button>
+
+      <div class="modal fade" id="modal2" tabindex="-1" role="dialog" 
+           aria-labelledby="titulo-modal2" aria-hidden="true">
+        <!-- Acá agregamos modal-lg o modal-sm -->
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="titulo-modal2">Título</h4>
+            </div>
+            <div class="modal-body">
+              Contenido diálogo grande...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- diálogo grande -->
+
+      <div class="modal fade" id="modal3" tabindex="-1" role="dialog" 
+           aria-labelledby="titulo-modal3" aria-hidden="true">
+        <!-- Acá agregamos modal-lg o modal-sm -->
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="titulo-modal3">Título</h4>
+            </div>
+            <div class="modal-body">
+              Contenido diálogo pequeño...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- diálogo pequeño -->
+
+    </div> <!-- bs-example -->
+
+    <div class="bs-example">
+      <h2>Cuadrícula dentro de cuadro de diálogo</h2>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal4">
+        Mostrar diálogo con cuadrícula
+      </button>
+
+      <div class="modal fade" id="modal4" tabindex="-1" role="dialog" 
+           aria-labelledby="titulo-modal4" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="titulo-modal4">Título</h4>
+            </div>
+            <!-- Para aprovechar una cuadrícula en el diálogo, agregamos un div con
+                 clase "container-fluid" dentro del "modal-body" -->
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-4">.col-md-4</div>
+                  <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                  <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-9">
+                    Nivel 1: .col-sm-9
+                    <div class="row">
+                      <div class="col-xs-8 col-sm-6">
+                        Nivel 2: .col-xs-8 .col-sm-6
+                      </div>
+                      <div class="col-xs-4 col-sm-6">
+                        Nivel 2: .col-xs-4 .col-sm-6
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- container-fluid -->
+            </div> <!-- modal-body -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- diálogo con cuadrícula -->
+
+    </div> <!-- bs-example -->
+
+    <div class="bs-example">
+      <h2>Ejemplo con eventos y contenido según el botón pulsado</h2>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal5"
+              data-formato="CD">
+        Comprar en CD
+      </button>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal5"
+              data-formato="MP3">
+        Comprar en MP3
+      </button>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal5"
+              data-formato="Vinil">
+        Comprar en Vinil
+      </button>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal5"
+              data-formato="Cartucho">
+        Comprar en cartucho de 8"
+      </button>
+
+      <div class="modal fade" id="modal5" tabindex="-1" role="dialog" 
+           aria-labelledby="titulo-modal5" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="titulo-modal5">Confirmación de compra</h4>
+            </div>
+            <div class="modal-body">
+              <!-- Incluimos formulario en el cuerpo del diálogo -->
+              <form>
+                <div class="form-group">
+                  <label class="control-label">Formato:</label>
+                  <!-- En este espacio (párrafo) mostraremos la opción seleccionada
+                       según el botón pulsado (ver fragmento JS al final) -->
+                  <p class="form-control-static" id="formato"></p>
+                </div>
+                <div class="form-group">
+                  <label for="cantidad" class="control-label">Cantidad:</label>
+                  <input type="number" class="form-control" id="cantidad" value="1">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal"
+                      id="btn-confirmar">Confirmar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- diálogo grande -->
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+// evento al iniciar la acción de mostrar el diálogo
+$('#modal5').on('show.bs.modal', function (event) {
+  var boton = $(event.relatedTarget); // Obtener el botón que disparó el evento
+  var formato = boton.data('formato'); // extraer información de los atributos data-*
+  if ( formato != 'Cartucho' ) {
+    var modal = $(this); // una referencia al propio diálogo
+    modal.find('.modal-title').text('Confirmación de compra de ' + formato);
+    modal.find('.modal-body #formato').text(formato);
+  }
+  else {
+    alert("El formato seleccionado ya no está disponible");
+    event.preventDefault();
+  }
+})
+
+// evento cuando se pulsa el botón de confirmar compra
+$('#btn-confirmar').click(function() {
+  // agregamos un atributo al diálogo para indicar que se confirmó la compra
+  $('#modal5').data( 'compra-confirmada', true );
+});
+
+// evento luego de cerrar el diálogo
+$('#modal5').on('hidden.bs.modal', function (event) {
+  // verificaremos si se confirmó la compra
+  var modal = $(this); // una referencia al propio diálogo
+  if ( modal.data('compra-confirmada') === true ) {
+    alert('Gracias por su compra de ' +
+          $('#cantidad').val() + ' ' + $('#formato').text()
+         );
+    // eliminar el atributo al cerrar el diálogo
+    modal.data( 'compra-confirmada', false );
+  }
+});
+
+</script>
+
+</body>
+</html>
