@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Tooltips y Popovers en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Tooltips y Popovers en Bootstrap</h1>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Tooltips
+      </div>
+      <div class="panel-body">
+        <p>En este
+           <span data-toggle="tooltip" title="Mensaje de tooltip">
+           <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ícono
+           </span>
+           hay un tooltip predeterminado. Acá tenemos otros en varias direcciones:
+           <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"
+                 data-toggle="tooltip" title="Tooltip hacia arriba" data-placement="top"></span>
+
+           <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"
+                 data-toggle="tooltip" title="Tooltip hacia abajo" data-placement="bottom"></span>
+
+           <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"
+                 data-toggle="tooltip" title="Tooltip hacia la izquierda" data-placement="left"></span>
+
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"
+                 data-toggle="tooltip" title="Tooltip hacia la derecha" data-placement="right"></span>
+        </p>
+        <div class="form-group">
+          <label>
+            En este campo, el tooltip se activa con el foco (no con el puntero del ratón), y
+            en el ícono al hacer clic
+            <input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus"
+                   title="Texto de tooltip en campo" data-placement="right">
+          </label>
+          <span class="glyphicon glyphicon-question-sign" title="Otro texto"
+                data-toggle="tooltip" data-trigger="click"></span>
+        </div>
+
+        <div class="form-group">
+          <label>
+            En este campo tenemos un tooltip estático
+            <input type="text" class="form-control" data-toggle="tooltip" data-trigger="manual"
+                   title="Texto de tooltip estático" data-placement="right">
+          </label>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6" id="celda-izquierda">
+            El siguiente tooltip debe estar contenido sólo en la columna izquierda
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"
+                  data-toggle="tooltip" title="Tooltip hacia la derecha, contenido"
+                  data-placement="right" data-viewport="celda-izquierda"></span>
+          </div>
+          <div class="col-xs-6">Celda derecha</div>
+        </div>
+
+        <p>Podemos incluir código HTML en el contenido del tooltip, aunque no siempre es recomendable
+          <span class="glyphicon glyphicon-question-sign"
+              title="&copy; Texto con HTML en tooltip <img src='http://placehold.it/40x40'>"
+              data-toggle="tooltip" data-html="true"></span>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Popovers
+      </div>
+      <div class="panel-body">
+        <p>En este
+           <span data-toggle="popover" title="Título de popover" data-content="Contenido...">
+           <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ícono
+           </span>
+           hay un popover predeterminado, y en el siguiente, uno sin título.
+           <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-content="Contenido..."
+                 data-toggle="popover"></span>
+
+           Acá tenemos otros en varias direcciones:
+           <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" data-content="Contenido..."
+                 data-toggle="popover" title="Popover hacia arriba" data-placement="top"></span>
+
+           <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" data-content="Contenido..."
+                 data-toggle="popover" title="Popover hacia abajo" data-placement="bottom"></span>
+
+           <span class="glyphicon glyphicon-arrow-left" aria-hidden="true" data-content="Contenido..."
+                 data-toggle="popover" title="Popover hacia la izquierda" data-placement="left"></span>
+
+           <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" data-content="Contenido..."
+                 data-toggle="popover" title="Popover hacia la derecha" data-placement="right"></span>
+        </p>
+        <div class="form-group">
+          <label>
+            En este campo, el popover se activa con el foco (no con el clic), y
+            en el ícono con el puntero del ratón (hover)
+            <input type="text" class="form-control" data-toggle="popover" data-trigger="focus"
+                   title="Popover en campo" data-placement="right" data-content="Contenido...">
+          </label>
+          <span class="glyphicon glyphicon-question-sign" title="Otro título"
+                data-toggle="popover" data-trigger="hover" data-content="Contenido..."></span>
+        </div>
+
+        <div class="form-group">
+          <label>
+            En este campo tenemos un popover estático
+            <input type="text" class="form-control" data-toggle="popover" data-trigger="manual"
+                   title="Popover estático" data-placement="right" data-content="Contenido...">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-default" id="btn-tooltips">Mostrar/ocultar tooltips</button>
+    <button type="button" class="btn btn-default" id="btn-popovers">Mostrar/ocultar popovers</button>
+    <button type="button" class="btn btn-danger" id="btn-destroy-tooltips">Destruir tooltips</button>
+    <button type="button" class="btn btn-danger" id="btn-destroy-popovers">Destruir popovers</button>
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+// inicializamos todos los elementos tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
+// activamos los tooltip estáticos
+$('[data-toggle="tooltip"][data-trigger="manual"]').tooltip('show');
+
+// inicializamos todos los elementos popover
+$('[data-toggle="popover"]').popover();
+
+// activamos los popover estáticos
+$('[data-toggle="popover"][data-trigger="manual"]').popover('show');
+
+// Acciones de botones
+$('#btn-tooltips').click(function(){
+  $('[data-toggle="tooltip"]').tooltip('toggle');
+});
+
+$('#btn-popovers').click(function(){
+  $('[data-toggle="popover"]').popover('toggle');
+});
+
+$('#btn-destroy-tooltips').click(function(){
+  $('[data-toggle="tooltip"]').tooltip('destroy');
+});
+
+$('#btn-destroy-popovers').click(function(){
+  $('[data-toggle="popover"]').popover('destroy');
+});
+</script>
+</body>
+</html>
