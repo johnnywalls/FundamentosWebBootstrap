@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Pestañas (JS) en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Pestañas (JS) en Bootstrap</h1>
+    <div class="alert alert-info">Activar la consola web para ver mensajes de eventos</div>
+
+    <div role="tabpanel">
+
+      <!-- Elementos de navegación con pestañas-->
+      <ul class="nav nav-tabs" id="pestanas" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#inicio" aria-controls="inicio" role="tab" data-toggle="tab">Inicio</a>
+        </li>
+        <li role="presentation">
+          <a href="#perfil" aria-controls="perfil" role="tab" data-toggle="tab">Perfil</a>
+        </li>
+        <li role="presentation">
+          <a href="#mensajes" aria-controls="mensajes" role="tab" data-toggle="tab">Mensajes</a>
+        </li>
+        <li role="presentation">
+          <a href="#configuracion" aria-controls="configuracion" role="tab" data-toggle="tab">Configuración</a>
+        </li>
+      </ul>
+
+      <!-- Contenedor global para todas las pestañas, con la clase "tab-content" -->
+      <div class="tab-content">
+        <!-- El contenido de cada pestaña tiene la clase "tab-pane". No confundir con role="tabpanel" -->
+        <!-- Podemos agregar también efectos con la clase "fade". La primera pestaña (activa)
+             deberá entonces tener también la clase "in" para aparecer -->
+        <div role="tabpanel" class="tab-pane fade in active" id="inicio">
+          <h3 class="page-header">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio
+          </h3>
+          <p>Fusce ac lectus gravida nisl facilisis rutrum eget ut magna. Proin eu 
+          commodo nisl, non lobortis mauris? Morbi efficitur risus id leo mollis; ac 
+          posuere dui pellentesque. Curabitur ante massa, malesuada sit amet nunc eget, 
+          tempor fringilla libero. Sed luctus ipsum sit amet massa tristique, sed 
+          elementum purus placerat. Aenean et ultrices eros, eu dignissim lacus. Morbi 
+          suscipit, metus ut tempus fermentum, risus ipsum mattis elit; et luctus magna 
+          nibh ut purus. Maecenas finibus, tortor vehicula convallis dapibus, ligula risus 
+          mollis ante, at porta diam massa et ex! Nulla facilisi.</p>
+          <button type="button" class="btn btn-default" id="boton-config">Ir a Configuración</button>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="perfil">
+          <h3 class="page-header">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil
+          </h3>
+          <p>Morbi a justo nunc. Donec leo felis, feugiat eu purus in, auctor 
+          scelerisque nisl. Praesent dapibus arcu a pretium tempus. Donec dictum eros sed 
+          sem tristique, at interdum nulla pellentesque. Cras rutrum tincidunt aliquet! 
+          Fusce finibus orci nec urna laoreet vehicula? Nullam vel lacus massa. Nulla non 
+          enim in enim luctus semper eu ut tellus. Vestibulum ante ipsum primis in 
+          faucibus orci luctus et ultrices posuere cubilia Curae; Donec nisi risus; 
+          sagittis nec interdum a; pretium quis diam. Vivamus ut pharetra sem. Vivamus in 
+          egestas risus, nec accumsan nulla.</p>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="mensajes">
+          <h3 class="page-header">
+            <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Mensajes
+          </h3>
+          <p>Proin nec quam sed leo consequat bibendum. Aenean in semper eros, 
+          id commodo libero. Nulla vestibulum sapien purus, ut ullamcorper ligula 
+          condimentum ac! Ut eget ex nisi. Cras dignissim gravida venenatis. Class aptent 
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+          Vivamus pulvinar quam a elementum convallis.Cras fringilla aliquam velit. Donec 
+          ultrices felis quis augue malesuada; ac scelerisque tortor laoreet. In dignissim 
+          sem ac volutpat venenatis. Pellentesque tempus aliquam pellentesque. Aliquam 
+          venenatis felis in interdum tristique. Quisque feugiat condimentum tortor eu 
+          condimentum. Proin ac tempus purus, faucibus sollicitudin ligula. Integer dictum 
+          maximus tortor sit amet mollis. Aliquam tincidunt lacus quis dictum luctus.</p>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="configuracion">
+          <h3 class="page-header">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración
+          </h3>
+          <p>Fusce tempus et velit ac consectetur. Vivamus viverra turpis tellus, vitae 
+          pharetra justo vestibulum ac.Sed tincidunt mi eget augue venenatis, ac vulputate 
+          ligula bibendum! Phasellus vel elit a nunc sodales luctus quis sed lectus. 
+          Curabitur purus ante, mollis non vehicula elementum, mattis cursus orci. Aenean 
+          egestas congue odio a eleifend. Pellentesque aliquam mattis mi vel ornare. 
+          Suspendisse aliquam malesuada nibh, vel tempus nibh porttitor et. Nunc leo eros, 
+          laoreet nec diam vitae; consectetur rhoncus metus? Etiam non tempor nibh.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+<script>
+// Activar una pestaña con un botón personalizado
+$('#boton-config').click(function(e){
+  $('#pestanas a[href="#configuracion"]').tab('show');
+});
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  console.log( 'Nueva pestaña: ' + e.target );
+  console.log( 'Pestaña anterior: ' + e.relatedTarget );
+});
+</script>
+</body>
+</html>
