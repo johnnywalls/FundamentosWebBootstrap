@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Agregado JS para Botones en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container">
+    <h1>Agregado JS para Botones en Bootstrap</h1>
+
+    <div class="alert alert-info">Activar la consola web para ver mensajes de eventos</div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Manejo de estados en botón
+      </div>
+      <div class="panel-body">
+        <p>Al pulsar este botón, cambiaremos su estado vía JS para ilustrar el manejo
+           de estados predefinidos:</p>
+        <button type="button" class="btn btn-default" id="btn-estados"
+                data-espera-text="Espera 5 segundos..."
+                autocomplete="off">Botón 1</button>
+        <hr>
+        <p>El segundo botón está configurado como un botón de pulsación única.
+           Nótese que aún cuando su estado visual permanece como pulsado, aún
+           recibe eventos "clic".</p>
+        <button type="button" class="btn btn-default" id="btn-estados-2"
+                data-pulsado-text="Ya estoy pulsado" data-toggle="button"
+                autocomplete="off">Botón 2</button>
+        <hr>
+        <p>El tercer botón también es de pulsación única, pero una vez pulsado
+           lo deshabilitaremos vía JS.</p>
+        <button type="button" class="btn btn-default" id="btn-estados-3"
+                data-pulsado-text="Ya estoy pulsado" data-toggle="button"
+                autocomplete="off">Botón 3</button>
+        <hr>
+        <p>El cuarto botón está configurado como un botón de pulsación única.
+           Lo reactivaremos al estado original luego de 5 segundos vía JS, simulando
+           una pulsación retardada</p>
+        <button type="button" class="btn btn-default" id="btn-estados-4"
+                data-espera-text="Espera 5 segundos..." data-toggle="button"
+                autocomplete="off">Botón 4</button>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Dar estilo a "checkbox" y "radio" como grupo de botones
+      </div>
+      <div class="panel-body">
+        <form>
+          <p>Grupo de "checkbox" como botones</p>
+          <div class="btn-group" data-toggle="buttons">
+            <!-- Pre-seleccionamos el primero agregando la clase "active" en la
+                etiqueta y el atributo "checked" en el campo -->
+            <label class="btn btn-default active">
+              <input type="checkbox" autocomplete="off" checked> Checkbox 1 (pre-seleccionado)
+            </label>
+            <label class="btn btn-default">
+              <input type="checkbox" autocomplete="off"> Checkbox 2
+            </label>
+            <label class="btn btn-default">
+              <input type="checkbox" autocomplete="off"> Checkbox 3
+            </label>
+          </div>
+
+          <hr>
+
+          <p>Grupo de "radio" como botones</p>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active">
+              <input type="radio" autocomplete="off" checked> Radio 1 (pre-seleccionado)
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" autocomplete="off"> Radio 2
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" autocomplete="off"> Radio 3
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+$('#btn-estados').click(function() {
+  console.log('Hemos recibido un clic en el botón 1');
+  // Cambiamos el botón a un estado textual de espera ya definido
+  $( this ).button( 'espera' );
+  window.setTimeout( function(){
+    // Reiniciamos el estado inicial del botón
+    $('#btn-estados').button( 'reset' );
+    console.log('Reiniciamos el botón 1');
+  }, 5000 );
+});
+
+$('#btn-estados-2').click(function() {
+  console.log('Hemos recibido un clic en el botón 2');
+  // cambiamos el estado textual del botón
+  $(this).button('pulsado');
+});
+
+$('#btn-estados-3').click(function() {
+  console.log('Hemos recibido un clic en el botón 3');
+  // cambiamos el estado textual del botón
+  $(this).button('pulsado');
+  $(this).attr('disabled','disabled');
+});
+
+$('#btn-estados-4').click(function() {
+  console.log('Hemos recibido un clic botón 4');
+  // Cambiamos el botón a un estado textual de espera ya definido
+  $( this ).button( 'espera' );
+  window.setTimeout( function(){
+    // Volvemos a habilitar el botón
+    $('#btn-estados-4').button( 'toggle' );
+    $('#btn-estados-4').button( 'reset' );
+    console.log('Reiniciamos el botón 4');
+  }, 5000 );
+});
+</script>
+</body>
+</html>
