@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Las 3 etiquetas anteriores deben ir en primer lugar en el bloque head -->
+  <title>Elementos "Affix" en Bootstrap</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- HTML5 shim y Respond.js se agregan para mejorar soporte a IE8 -->
+  <!-- NOTA: Respond.js no funciona si se ve la página localmente con file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<!-- Estilos de íconos de Font Awesome -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style>
+/* Acá definimos que la tabla de contenido, una vez se active el desplazamiento,
+ * quede fija a 20 px del límite superior
+ */
+#tabla-contenido.affix {
+  top: 20px;
+}
+</style>
+</head>
+<!-- Usamos también el ScrollSpy para que las entradas de la tabla de contenido
+     se activen al ir desplazándonos.  Esto es opcional -->
+<body data-spy="scroll" data-target="#tabla-contenido" data-offset="40">
+  <!-- podemos usar la clase "container" (ancho fijo) o "container-fluid" (ancho completo) -->
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Elementos "Affix" en Bootstrap</h1>
+      <p>Usamos un encabezado "jumbotron" para ilustrar el posicionamiento de
+         elementos fijos con "Affix".</p>
+      <p>Tenemos la tabla de contenido a la derecha como elemento fijo, y un grupo de
+          botones. Agregamos también el "ScrollSpy" para ilustrar el ejemplo de la tabla.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Lorem ipsum</a></p>
+    </div>
+    
+    <div class="row">
+      <!-- Contenido fijo en segunda columna. Usamos pull-right para colocarla a la derecha
+           aún cuando la escribimos en primer lugar, para ilustrar mejor nuestro ejemplo -->
+      <div class="col-md-3 pull-right">
+        <!-- Nuestra tabla de contenido sólo será visible para "viewports" medios o grandes.
+             Usamos data-spy="affix" para fijar la posición, y data-offset-top para indicar
+             cuántos pixeles podemos tener de desplazamiento superior antes de fijar el
+             elemento. Nótese que estamos usando el alto medido de nuestro encabezado,
+             pero esto puede calcularse vía JS (ver ejemplo con el grupo fijo de botones
+             "sociales" al final en el fragmento JS al final del archivo) -->
+        <nav class="hidden-print hidden-xs hidden-sm" id="tabla-contenido"
+             data-spy="affix" data-offset-top="360">
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><h3>Tabla de contenido</h3></li>
+            <li role="presentation"><a href="#inicio">Inicio</a></li>
+            <li role="presentation"><a href="#productos">Productos</a></li>
+            <li role="presentation"><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Contenido "principal" en primera columna -->
+      <div class="col-md-9" id="principal">
+        <div class="alert alert-info">Activar la consola web para ver mensajes de eventos</div>
+
+        <!-- También dejaremos fijo un grupo de botones "sociales". Igual que antes, usamos
+             data-spy y data-offset-top.  En este caso, la posición del grupo de botones será
+             calculada mediante JS en los manejadores de evento de desplazamiento del affix
+             (ver fragmento JS al final del archivo) -->
+        <div id="botones" class="btn-group btn-group-lg hidden-print pull-right" data-spy="affix"
+             data-offset-top="440" role="group" aria-label="Acciones para compartir">
+          <button type="button" class="btn btn-default" title="Compartir por correo">
+            <i class="fa fa-envelope-o"></i>
+          </button>
+          <button type="button" class="btn btn-default" title="Compartir en Facebook">
+            <i class="fa fa-facebook-official"></i>
+          </button>
+          <button type="button" class="btn btn-default" title="Compartir en Twitter">
+            <i class="fa fa-twitter-square"></i>
+          </button>
+          <button type="button" class="btn btn-default" title="Agregar a Favoritos">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+
+        <h2 id="inicio" class="page-header">Inicio</h2>
+        Fusce ac lectus gravida nisl facilisis rutrum eget ut magna. Proin eu 
+        commodo nisl, non lobortis mauris? Morbi efficitur risus id leo mollis; ac 
+        posuere dui pellentesque. Curabitur ante massa, malesuada sit amet nunc eget, 
+        tempor fringilla libero. Sed luctus ipsum sit amet massa tristique, sed 
+        elementum purus placerat. Aenean et ultrices eros, eu dignissim lacus. Morbi 
+        suscipit, metus ut tempus fermentum, risus ipsum mattis elit; et luctus magna 
+        nibh ut purus. Maecenas finibus, tortor vehicula convallis dapibus, ligula risus 
+        mollis ante, at porta diam massa et ex! Nulla facilisi. In eu pharetra 
+        diam.Morbi a justo nunc. Donec leo felis, feugiat eu purus in, auctor 
+        scelerisque nisl. Praesent dapibus arcu a pretium tempus. Donec dictum eros sed 
+        sem tristique, at interdum nulla pellentesque. Cras rutrum tincidunt aliquet! 
+        Fusce finibus orci nec urna laoreet vehicula? Nullam vel lacus massa. Nulla non 
+        enim in enim luctus semper eu ut tellus. Vestibulum ante ipsum primis in 
+        faucibus orci luctus et ultrices posuere cubilia Curae; Donec nisi risus; 
+        sagittis nec interdum a; pretium quis diam. Vivamus ut pharetra sem. Vivamus in 
+        egestas risus, nec accumsan nulla. Quisque maximus, augue vel eleifend 
+        sollicitudin, nulla quam imperdiet lacus, id tempus augue orci a tortor.Fusce at 
+        fermentum sem. Proin nec quam sed leo consequat bibendum. Aenean in semper eros, 
+        id commodo libero. Nulla vestibulum sapien purus, ut ullamcorper ligula 
+        condimentum ac! Ut eget ex nisi. Cras dignissim gravida venenatis. Class aptent 
+        taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+        Vivamus pulvinar quam a elementum convallis.Cras fringilla aliquam velit. Donec 
+        ultrices felis quis augue malesuada; ac scelerisque tortor laoreet. In dignissim 
+        sem ac volutpat venenatis. Pellentesque tempus aliquam pellentesque. Aliquam 
+        venenatis felis in interdum tristique. Quisque feugiat condimentum tortor eu 
+        condimentum. Proin ac tempus purus, faucibus sollicitudin ligula. Integer dictum 
+        maximus tortor sit amet mollis. Aliquam tincidunt lacus quis dictum luctus. 
+        Fusce tempus et velit ac consectetur. Vivamus viverra turpis tellus, vitae 
+        pharetra justo vestibulum ac.Sed tincidunt mi eget augue venenatis, ac vulputate 
+        ligula bibendum! Phasellus vel elit a nunc sodales luctus quis sed lectus. 
+        Curabitur purus ante, mollis non vehicula elementum, mattis cursus orci. Aenean 
+        egestas congue odio a eleifend. Pellentesque aliquam mattis mi vel ornare. 
+        Suspendisse aliquam malesuada nibh, vel tempus nibh porttitor et. Nunc leo eros, 
+        laoreet nec diam vitae; consectetur rhoncus metus? Etiam non tempor nibh. 
+        Praesent ac lectus fringilla; hendrerit tellus et, vehicula est. Nam a tincidunt 
+        nulla. Integer vehicula varius tortor, non elementum ex cursus quis. Suspendisse 
+        convallis fermentum ex, non pellentesque felis molestie ac!Morbi eget mi et mi 
+        egestas consectetur eget et ligula. Nulla pretium enim vel tempor rutrum. Sed 
+        euismod erat in lorem hendrerit viverra! Quisque hendrerit hendrerit finibus. 
+        Integer lacus lorem, fermentum sed consectetur vitae, imperdiet sed lorem. 
+        Pellentesque pellentesque nisl sit amet magna pulvinar pretium. Integer eget 
+        blandit dui, id tristique nisi. Curabitur molestie, ligula sed tristique 
+        condimentum, quam leo posuere diam, vitae tempor massa magna ultrices enim. 
+        Aenean volutpat lacus in nulla tempor porta. Nullam vel ipsum arcu. Sed vel enim 
+        malesuada, efficitur ligula id, varius lacus! Curabitur tellus tellus, commodo 
+        eu pharetra eu, molestie non turpis. Vestibulum hendrerit enim rutrum; tincidunt 
+        arcu sit amet, hendrerit leo.Vivamus metus ante, aliquam a eleifend tempor, 
+        auctor eu ipsum. Ut pretium efficitur magna; ut lacinia ipsum luctus non. Etiam 
+        a lectus et libero mollis elementum nec at ipsum! Sed et cursus risus, eu semper 
+        eros. Nullam imperdiet massa vel sodales scelerisque. Sed vel malesuada diam, 
+        nec elementum lacus. Praesent dui nisi; tempor et blandit interdum; viverra id 
+        quam. Ut nec tincidunt massa? Cras id scelerisque ex. Nam imperdiet felis urna, 
+        at condimentum lectus tincidunt ac. Donec fermentum mi molestie
+
+        <h2 id="productos" class="page-header">Productos</h2>
+        Fusce ac lectus gravida nisl facilisis rutrum eget ut magna. Proin eu 
+        commodo nisl, non lobortis mauris? Morbi efficitur risus id leo mollis; ac 
+        posuere dui pellentesque. Curabitur ante massa, malesuada sit amet nunc eget, 
+        tempor fringilla libero. Sed luctus ipsum sit amet massa tristique, sed 
+        elementum purus placerat. Aenean et ultrices eros, eu dignissim lacus. Morbi 
+        suscipit, metus ut tempus fermentum, risus ipsum mattis elit; et luctus magna 
+        nibh ut purus. Maecenas finibus, tortor vehicula convallis dapibus, ligula risus 
+        mollis ante, at porta diam massa et ex! Nulla facilisi. In eu pharetra 
+        diam.Morbi a justo nunc. Donec leo felis, feugiat eu purus in, auctor 
+        scelerisque nisl. Praesent dapibus arcu a pretium tempus. Donec dictum eros sed 
+        sem tristique, at interdum nulla pellentesque. Cras rutrum tincidunt aliquet! 
+        Fusce finibus orci nec urna laoreet vehicula? Nullam vel lacus massa. Nulla non 
+        enim in enim luctus semper eu ut tellus. Vestibulum ante ipsum primis in 
+        faucibus orci luctus et ultrices posuere cubilia Curae; Donec nisi risus; 
+        sagittis nec interdum a; pretium quis diam. Vivamus ut pharetra sem. Vivamus in 
+        egestas risus, nec accumsan nulla. Quisque maximus, augue vel eleifend 
+        sollicitudin, nulla quam imperdiet lacus, id tempus augue orci a tortor.Fusce at 
+        fermentum sem. Proin nec quam sed leo consequat bibendum. Aenean in semper eros, 
+        id commodo libero. Nulla vestibulum sapien purus, ut ullamcorper ligula 
+        condimentum ac! Ut eget ex nisi. Cras dignissim gravida venenatis. Class aptent 
+        taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+        Vivamus pulvinar quam a elementum convallis.Cras fringilla aliquam velit. Donec 
+        ultrices felis quis augue malesuada; ac scelerisque tortor laoreet. In dignissim 
+        sem ac volutpat venenatis. Pellentesque tempus aliquam pellentesque. Aliquam 
+        venenatis felis in interdum tristique. Quisque feugiat condimentum tortor eu 
+        condimentum. Proin ac tempus purus, faucibus sollicitudin ligula. Integer dictum 
+        maximus tortor sit amet mollis. Aliquam tincidunt lacus quis dictum luctus. 
+        Fusce tempus et velit ac consectetur. Vivamus viverra turpis tellus, vitae 
+        pharetra justo vestibulum ac.Sed tincidunt mi eget augue venenatis, ac vulputate 
+        ligula bibendum! Phasellus vel elit a nunc sodales luctus quis sed lectus. 
+        Curabitur purus ante, mollis non vehicula elementum, mattis cursus orci. Aenean 
+        egestas congue odio a eleifend. Pellentesque aliquam mattis mi vel ornare. 
+        Suspendisse aliquam malesuada nibh, vel tempus nibh porttitor et. Nunc leo eros, 
+        laoreet nec diam vitae; consectetur rhoncus metus? Etiam non tempor nibh. 
+        Praesent ac lectus fringilla; hendrerit tellus et, vehicula est. Nam a tincidunt 
+        nulla. Integer vehicula varius tortor, non elementum ex cursus quis. Suspendisse 
+        convallis fermentum ex, non pellentesque felis molestie ac!Morbi eget mi et mi 
+        egestas consectetur eget et ligula. Nulla pretium enim vel tempor rutrum. Sed 
+        euismod erat in lorem hendrerit viverra! Quisque hendrerit hendrerit finibus. 
+        Integer lacus lorem, fermentum sed consectetur vitae, imperdiet sed lorem. 
+        Pellentesque pellentesque nisl sit amet magna pulvinar pretium. Integer eget 
+        blandit dui, id tristique nisi. Curabitur molestie, ligula sed tristique 
+        condimentum, quam leo posuere diam, vitae tempor massa magna ultrices enim. 
+        Aenean volutpat lacus in nulla tempor porta. Nullam vel ipsum arcu. Sed vel enim 
+        malesuada, efficitur ligula id, varius lacus! Curabitur tellus tellus, commodo 
+        eu pharetra eu, molestie non turpis. Vestibulum hendrerit enim rutrum; tincidunt 
+        arcu sit amet, hendrerit leo.Vivamus metus ante, aliquam a eleifend tempor, 
+        auctor eu ipsum. Ut pretium efficitur magna; ut lacinia ipsum luctus non. Etiam 
+        a lectus et libero mollis elementum nec at ipsum! Sed et cursus risus, eu semper 
+        eros. Nullam imperdiet massa vel sodales scelerisque. Sed vel malesuada diam, 
+        nec elementum lacus. Praesent dui nisi; tempor et blandit interdum; viverra id 
+        quam. Ut nec tincidunt massa? Cras id scelerisque ex. Nam imperdiet felis urna, 
+        at condimentum lectus tincidunt ac. Donec fermentum mi molestie
+
+        <h2 id="contacto" class="page-header">Contacto</h2>
+        Fusce ac lectus gravida nisl facilisis rutrum eget ut magna. Proin eu 
+        commodo nisl, non lobortis mauris? Morbi efficitur risus id leo mollis; ac 
+        posuere dui pellentesque. Curabitur ante massa, malesuada sit amet nunc eget, 
+        tempor fringilla libero. Sed luctus ipsum sit amet massa tristique, sed 
+        elementum purus placerat. Aenean et ultrices eros, eu dignissim lacus. Morbi 
+        suscipit, metus ut tempus fermentum, risus ipsum mattis elit; et luctus magna 
+        nibh ut purus. Maecenas finibus, tortor vehicula convallis dapibus, ligula risus 
+        mollis ante, at porta diam massa et ex! Nulla facilisi. In eu pharetra 
+        diam.Morbi a justo nunc. Donec leo felis, feugiat eu purus in, auctor 
+        scelerisque nisl. Praesent dapibus arcu a pretium tempus. Donec dictum eros sed 
+        sem tristique, at interdum nulla pellentesque. Cras rutrum tincidunt aliquet! 
+        Fusce finibus orci nec urna laoreet vehicula? Nullam vel lacus massa. Nulla non 
+        enim in enim luctus semper eu ut tellus. Vestibulum ante ipsum primis in 
+        faucibus orci luctus et ultrices posuere cubilia Curae; Donec nisi risus; 
+        sagittis nec interdum a; pretium quis diam. Vivamus ut pharetra sem. Vivamus in 
+        egestas risus, nec accumsan nulla. Quisque maximus, augue vel eleifend 
+        sollicitudin, nulla quam imperdiet lacus, id tempus augue orci a tortor.Fusce at 
+        fermentum sem. Proin nec quam sed leo consequat bibendum. Aenean in semper eros, 
+        id commodo libero. Nulla vestibulum sapien purus, ut ullamcorper ligula 
+        condimentum ac! Ut eget ex nisi. Cras dignissim gravida venenatis. Class aptent 
+        taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+        Vivamus pulvinar quam a elementum convallis.Cras fringilla aliquam velit. Donec 
+        ultrices felis quis augue malesuada; ac scelerisque tortor laoreet. In dignissim 
+        sem ac volutpat venenatis. Pellentesque tempus aliquam pellentesque. Aliquam 
+        venenatis felis in interdum tristique. Quisque feugiat condimentum tortor eu 
+        condimentum. Proin ac tempus purus, faucibus sollicitudin ligula. Integer dictum 
+        maximus tortor sit amet mollis. Aliquam tincidunt lacus quis dictum luctus. 
+        Fusce tempus et velit ac consectetur. Vivamus viverra turpis tellus, vitae 
+        pharetra justo vestibulum ac.Sed tincidunt mi eget augue venenatis, ac vulputate 
+        ligula bibendum! Phasellus vel elit a nunc sodales luctus quis sed lectus. 
+        Curabitur purus ante, mollis non vehicula elementum, mattis cursus orci. Aenean 
+        egestas congue odio a eleifend. Pellentesque aliquam mattis mi vel ornare. 
+        Suspendisse aliquam malesuada nibh, vel tempus nibh porttitor et. Nunc leo eros, 
+        laoreet nec diam vitae; consectetur rhoncus metus? Etiam non tempor nibh. 
+        Praesent ac lectus fringilla; hendrerit tellus et, vehicula est. Nam a tincidunt 
+        nulla. Integer vehicula varius tortor, non elementum ex cursus quis. Suspendisse 
+        convallis fermentum ex, non pellentesque felis molestie ac!Morbi eget mi et mi 
+        egestas consectetur eget et ligula. Nulla pretium enim vel tempor rutrum. Sed 
+        euismod erat in lorem hendrerit viverra! Quisque hendrerit hendrerit finibus. 
+        Integer lacus lorem, fermentum sed consectetur vitae, imperdiet sed lorem. 
+        Pellentesque pellentesque nisl sit amet magna pulvinar pretium. Integer eget 
+        blandit dui, id tristique nisi. Curabitur molestie, ligula sed tristique 
+        condimentum, quam leo posuere diam, vitae tempor massa magna ultrices enim. 
+        Aenean volutpat lacus in nulla tempor porta. Nullam vel ipsum arcu. Sed vel enim 
+        malesuada, efficitur ligula id, varius lacus! Curabitur tellus tellus, commodo 
+        eu pharetra eu, molestie non turpis. Vestibulum hendrerit enim rutrum; tincidunt 
+        arcu sit amet, hendrerit leo.Vivamus metus ante, aliquam a eleifend tempor, 
+        auctor eu ipsum. Ut pretium efficitur magna; ut lacinia ipsum luctus non. Etiam 
+        a lectus et libero mollis elementum nec at ipsum! Sed et cursus risus, eu semper 
+        eros. Nullam imperdiet massa vel sodales scelerisque. Sed vel malesuada diam, 
+        nec elementum lacus. Praesent dui nisi; tempor et blandit interdum; viverra id 
+        quam. Ut nec tincidunt massa? Cras id scelerisque ex. Nam imperdiet felis urna, 
+        at condimentum lectus tincidunt ac. Donec fermentum mi molestie
+
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- jQuery (necesario para utilizar plugins JS de Bootstrap) -->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <!-- Acá utilizamos la versión precompilada y optimizada,
+  pero pueden incluirse otras versiones o componentes individuales -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+
+$('#botones').on('affix.bs.affix', function(e){
+  console.log('Activado el evento affix.bs.affix');
+  // Cuando se fije el grupo de botones por desplazamiento,
+  // calcular para posicionarlo a la derecha de la columna principal
+  // y debajo de la tabla de contenido (con 50px de espacio), siempre
+  // que nos encontremos con un "viewport" de ancho adecuado: recordemos
+  // que por debajo de un ancho "md" (992 px) no mostramos la tabla de contenido
+  if ( $( document ).width() >= 992 ) {
+    $(this).css('top',  $('#tabla-contenido').height()+50 );
+    $(this).css('left', $('#principal').width()+50);
+  }
+  else {
+    console.log('Cancelamos el affix por tener un viewport pequeño');
+    e.preventDefault();
+  }
+});
+
+$('#botones').on('affix-top.bs.affix', function(){
+  console.log('Activado el evento affix-top.bs.affix');
+  // Cuando el desplazamiento llegue a la posición superior,
+  // mover el grupo de botones a su posición relativa original
+  $(this).css( 'top', 0 );
+  $(this).css( 'left', 0 );
+});
+
+</script>
+</body>
+</html>
